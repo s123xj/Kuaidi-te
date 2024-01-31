@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.dingdan">
+
+
+    <select id="dingdan" resultType="com.itheima.domin.dingDan">
+        SELECT *
+        FROM expressage
+        <where>
+            <if test="did!=null and did !=''">
+                d_id=#{did}
+            </if>
+            <if test="sNumber!=null and sNumber!=''">
+                AND s_number=#{sNumber}
+            </if>
+                AND k_id=#{id}
+        </where>
+        ORDER BY e_id
+    </select>
+
+    <select id="shuju" resultType="map">
+         SELECT dtype.`name`,COUNT(*)AS value
+        FROM expressage LEFT JOIN dtype ON expressage.`d_type`=dtype.`id`
+        GROUP BY dtype.`name`
+    </select>
+
+</mapper>

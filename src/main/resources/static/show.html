@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<script type="text/javascript" src="js/jquery.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>上传文件</title>
+
+    <script>
+        var urls;
+            $.ajax({
+                type:'post',
+                url:'/upload',
+                dataType:"JSON",
+                success:function (data) {
+                    urls=data.data
+                    alert(urls)
+                    $("#imageld").attr('src',urls)
+                }
+            });
+    </script>
+</head>
+<body>
+<img src="" id="imageld"/>
+</body>
+</html>

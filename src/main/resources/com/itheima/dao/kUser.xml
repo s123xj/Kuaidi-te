@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.kUser">
+    <update id="update">
+        update yonghu
+        <set>
+            <if test="tphnumber!=null and tphnumber!=''">
+                tphnumber=#{tphnumber},
+            </if>
+            <if test="rejuster!=null and rejuster!=''">
+                rejuster=#{rejuster}
+            </if>
+        </set>
+        where znumber=#{znumber}
+    </update>
+
+</mapper>

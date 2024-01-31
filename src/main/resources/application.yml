@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/kuaidi?characterEncoding=utf-8
+    username: root
+    password: 13579
+server:
+  port: 8087
+#阿里云OSS
+aliyun:
+  oss:
+    endpoint: https://oss-cn-hangzhou.aliyuncs.com
+    accessKeyId: LTAI5tDEjiyQbHwZYoZnTCrt
+    accessKeySecret: RxzqB0kTNmi8eph3112fF5uHJHPXdj
+    bucketName: sxjweb-app
+
+  #文件上传的配置
+servlet:
+  multipart:
+    max-file-size: 10MB
+    max-request-size: 100MB
+
+  #开启驼峰命名映射
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
